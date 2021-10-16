@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import handleInitialData from '../actions/shared'
+import Dashboard from './Dashboard'
 
 class App extends Component {
   componentDidMount() {
@@ -13,6 +14,7 @@ class App extends Component {
           <h1>
             Would You Rather
           </h1>
+          <Dashboard />
         </header>
       </div>
     );
