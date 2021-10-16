@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Route, Redirect, useParams } from 'react-route
 import handleInitialData from '../actions/shared'
 import Dashboard from './Dashboard'
 import Login from './Login'
-import AnswerQuestion from './AnswerQuestion'
+import ViewQuestion from './ViewQuestion'
 import NewQuestion from './NewQuestion'
 import NavBar from './NavBar'
 import Leaderboard from './Leaderboard';
@@ -29,11 +29,13 @@ class App extends Component {
                 <NavBar />
                 <Redirect to='/dashboard' />
                 <Route path='/dashboard' component={Dashboard} />
-                <Route path='/questions/:question_id' component={AnswerQuestion} />
+                <Route path='/questions/:question_id' component={ViewQuestion} />
                 <Route path='/add' component={NewQuestion} />
                 <Route path='/leaderboard' component={Leaderboard} />
               </div>
-          }
+  }
+          
+          
         </Fragment>
       </Router>
     );

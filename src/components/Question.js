@@ -7,10 +7,10 @@ class Question extends Component {
         const { question } = this.props
 
         if (question === null ) {
-            return <p>This question does not exist</p>
+            return <h1 className="not-found">This question does not exist</h1>
         }
 
-        const { name, avatar, timestamp, optionOne, optionTwo } = question
+        const { name, avatar, timestamp, optionOne } = question
 
 
         console.log('props', this.props)

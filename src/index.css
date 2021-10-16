@@ -181,6 +181,10 @@ li {
   margin: 10px;
 }
 
+.button:hover {
+  color: #654321;
+  background-color: white;
+}
 .nav-bar {
   padding: 20px;
 }
@@ -218,4 +222,13 @@ li {
   background-color: wheat;
   color: #654321;
   margin: 0px;
+}
+
+.not-found {
+background-color: darkred;
+margin: 0px;
+padding: 20px;
+font-size:xx-large;
+text-align: center;
+color: white;
 }
