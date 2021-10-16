@@ -14,6 +14,7 @@ a {
   max-width: 1000px;
   margin: 0 auto;
   padding: 10px;
+  text-align: center;
 }
 
 .btn {
@@ -146,4 +147,57 @@ li {
   margin-top: 10px;
   font-size: 20px;
   color: #C3392A;
+}
+
+.form{
+
+  background-color: wheat;
+  color:#3d2814;
+  width: auto;
+  display: inline-block;
+  border-radius: 20%;
+  padding: 30px;
+
+}
+
+
+.dropdown {
+  font-size: 16px;
+  color:#3d2814;
+  background-color: wheat;
+}
+
+.button {
+  background-color:#654321;
+  color: wheat;
+  padding: 10px;
+  border-radius: 20%;
+  font-size: 16px;
+  margin: 10px;
+}
+
+.nav-bar {
+  padding: 20px;
+}
+
+.nav-item {
+  text-decoration: none;
+  color: wheat;
+  background-color: #654321;
+  padding: 30px;
+}
+
+.nav-item:hover {
+  background-color: darkslategray
+}
+
+.nav-item:focus {
+  background-color: darkolivegreen;
+}
+
+#welcome {
+  background-color: rgb(226, 92, 43);
+  padding: 30px;
+  color: wheat;
+  font-weight: bold;
 }
