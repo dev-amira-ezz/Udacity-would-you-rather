@@ -15,6 +15,7 @@ class Question extends Component {
 
         console.log('props', this.props)
         return(
+            <div className="container">
             <div className="question">
                 <img 
                 src={avatar} 
@@ -25,10 +26,11 @@ class Question extends Component {
                   <span>{name}</span>
                   <div>{formatDate(timestamp)}</div>
                   <p>Option One: {optionOne.text}</p>
-                  <p>Option Two: {optionTwo.text}</p>
+                  <button className="button">View Question</button>
                   </div>
                   {/* Described in the Tweet Component video how to create buttons and add number of votes logic */}
                 </div>
+            </div>
             </div>
         )
     }

@@ -24,6 +24,7 @@ import { setAuthedUser } from '../actions/authedUser'
     const { activeItem } = this.state
 
     return (
+      <div className="back-ground">
       <Menu secondary>
         <Menu.Item
           name='Home'
@@ -59,6 +60,7 @@ import { setAuthedUser } from '../actions/authedUser'
           />
         </Menu.Menu>
       </Menu>
+      </div>
     )
   }
 }

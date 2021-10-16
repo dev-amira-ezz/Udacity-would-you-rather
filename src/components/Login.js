@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
 import { setAuthedUser } from '../actions/authedUser';
 
@@ -20,6 +20,8 @@ class Login extends Component {
   };
   render() {
     return (
+      <Fragment>
+      <h1 className="header">Would You Rather</h1>
       <div className="container">
       <form onSubmit={this.handleSubmit} className="form">
         <h2>Welcome to </h2>
@@ -40,6 +42,7 @@ class Login extends Component {
         </p>
       </form>
       </div>
+      </Fragment>
     )
   }
 }

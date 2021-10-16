@@ -25,8 +25,8 @@ class App extends Component {
             : this.props.loggedOut === true
               ? <Route path='/' exact component={App} /> && <Login />
               : <div>
+                <h1 className="header">Would You Rather</h1>
                 <NavBar />
-                <h3>Would You Rather</h3>
                 <Redirect to='/dashboard' />
                 <Route path='/dashboard' component={Dashboard} />
                 <Route path='/questions/:question_id' component={AnswerQuestion} />
