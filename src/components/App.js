@@ -14,11 +14,20 @@ class App extends Component {
           <h1>
             Would You Rather
           </h1>
-          <Dashboard />
+          {this.props.loading === true
+            ? null
+            : <Dashboard />
+          }
         </header>
       </div>
     );
   }
 }
 
-export default connect()(App);
+function mapStateToProps({ authedUser }) {
+  return {
+    loading: authedUser === null
+  }
+}
+
+export default connect(mapStateToProps)(App);
