@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import Question from '../components/Question'
 import { connect } from 'react-redux'
+import QuestionDetails from './QuestionDetails'
+import AnswerQuestion from './AnswerQuestion'
 
 class ViewQuestion extends Component {
     render() {
@@ -9,8 +11,8 @@ class ViewQuestion extends Component {
     
         return(
             (answered 
-            ? <p>The Question is answered</p>
-            : <p>The Question is not answered</p>)
+            ? <QuestionDetails />
+            : <AnswerQuestion />)
         )
     }
 }

@@ -232,3 +232,10 @@ font-size:xx-large;
 text-align: center;
 color: white;
 }
+
+.your-answer {
+  background-color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 20px;
+}
