@@ -158,11 +158,10 @@ li {
 
   background-color: wheat;
   color:#3d2814;
-  width: auto;
-  display: inline-block;
+  display: inline-table;
   border-radius: 20%;
-  padding: 30px;
-
+  padding: 10px 60px 10px 60px;
+  width: auto;
 }
 
 
@@ -235,7 +234,7 @@ color: white;
 
 .your-answer {
   background-color: white;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin: 20px;
+  width:100%;
+  text-align: center;
+  padding: 0%;
 }

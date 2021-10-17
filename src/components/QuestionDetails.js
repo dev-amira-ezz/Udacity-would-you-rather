@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { Progress } from 'semantic-ui-react'
 
 class QuestionDetails extends Component {
     render() {
@@ -13,25 +14,29 @@ class QuestionDetails extends Component {
                 <div className="form">
                     <p> <img src={users[questions[qid].author].avatarURL} alt={users[questions[qid].author].id} /> </p>
                     <p>Asked By: {questions[qid].author}</p>
-                    <h3>Would you rather ... </h3>
+                    <h4>Wold you rather ...</h4>
                     {answeredOne
-                        ? <div>
+                        ? <div className="container">
                             <div className="your-answer">
-                                <p>Your Answer:</p>
+                                <h4 className="answer">Your Answer:</h4>
                                 <p>{questions[qid].optionOne.text}</p>
-                                <h4>{questionOneVotes} out of {votes} votes</h4>
+                                {questionOneVotes} out of {votes} votes
+                                <Progress value={questionOneVotes} total={votes} progress='percent' color='brown'/>
                             </div>
                             <p>Or ... </p>
                             <p>{questions[qid].optionTwo.text}</p>
-                            <h4>{questionTwoVotes} out of {votes} votes</h4>
+                            <Progress value={questionTwoVotes} total={votes} progress='percent' color='brown'/>
+                            {questionTwoVotes} out of {votes} votes
                         </div>
                         : <div>
                             <p>{questions[qid].optionOne.text}</p>
+                            <Progress value={questionOneVotes} total={votes} progress='percent' color='brown'/>
                             <h4>{questionOneVotes} out of {votes} votes</h4>
                             <p>Or ... </p>
                             <div className="your-answer">
                                 <p>Your Answer:</p>
                                 <p>{questions[qid].optionTwo.text}</p>
+                                <Progress value={questionTwoVotes} total={votes} progress='percent' color='brown'/>
                                 <h4>{questionTwoVotes} out of {votes} votes</h4>
                             </div>
                         </div>

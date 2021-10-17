@@ -7,7 +7,6 @@ import AnswerQuestion from './AnswerQuestion'
 class ViewQuestion extends Component {
     render() {
         const {authedUser, answered} = this.props
-        console.log('Is it answered? ', answered)
     
         return(
             (answered 
