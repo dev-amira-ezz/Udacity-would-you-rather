@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Progress } from 'semantic-ui-react'
+import {formatDate} from '../utils/helpers'
 
 class QuestionDetails extends Component {
     render() {
@@ -11,9 +12,10 @@ class QuestionDetails extends Component {
         const votes = (questionOneVotes)+(questionTwoVotes)
         return (
             <div className="container">
-                <div className="question">
+                <div className="form">
                     <p> <img src={users[questions[qid].author].avatarURL} alt={users[questions[qid].author].id} /> </p>
                     <p>Asked By: {questions[qid].author}</p>
+                    <p>{formatDate(questions[qid].timestamp)}</p>
                     <h4>Wold you rather ...</h4>
                     {answeredOne
                         ? <div className="container">

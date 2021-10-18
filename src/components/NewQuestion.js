@@ -1,11 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { formatQuestion, formatDate } from '../utils/helpers'
 
 class NewQuestion extends Component {
     render() {
         const { questions, users, authedUser } = this.props
-        console.log('authedUser from add question', authedUser)
         return (
             <div className="container">
                 <div className="form">
@@ -24,7 +22,6 @@ class NewQuestion extends Component {
                                 <button className="button">Add Question</button>
                             </form>
                         </div>
-                        {/* Described in the Tweet Component video how to create buttons and add number of votes logic */}
                     </div>
                 </div>
             </div>

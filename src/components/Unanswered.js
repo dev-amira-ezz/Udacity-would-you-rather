@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import {Link } from 'react-router-dom'
+import { formatDate } from '../utils/helpers'
 
 class Unanswered extends Component {
  
@@ -21,6 +22,7 @@ class Unanswered extends Component {
             {Object.values(unansweredQuestions).map((question=>(
                 <li className="form" key={question.id}>
                 <p> <img src={users[question.author].avatarURL} alt={users[question.author].id} /> </p>
+                <p>{formatDate(question.timestamp)}</p>
                 <h3>{question.author} says:</h3>
                 <h3>Would you rather ... </h3>
                 <p>{question.optionOne.text}</p>

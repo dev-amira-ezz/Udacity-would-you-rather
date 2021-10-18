@@ -10,7 +10,7 @@ class AnswerQuestion extends Component {
             return <h1 className="not-found">This question does not exist</h1>
         }
 
-        const { name, avatar, timestamp, optionOne, optionTwo } = question
+        const { name, avatar, optionOne, optionTwo, timestamp } = question
 
         return (
             <div className="container">
@@ -19,6 +19,7 @@ class AnswerQuestion extends Component {
                         src={avatar}
                         alt={`Avatar of ${name}`}
                     />
+                                    <p>{formatDate(timestamp)}</p>
                     <div className='question-info'>
                         <div>
                             <span>{name} asks:</span>
@@ -31,7 +32,6 @@ class AnswerQuestion extends Component {
                                 <button className="button">Answer Question</button>
                             </form>
                         </div>
-                        {/* Described in the Tweet Component video how to create buttons and add number of votes logic */}
                     </div>
                 </div>
             </div>
