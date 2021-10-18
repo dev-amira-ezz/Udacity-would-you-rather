@@ -11,7 +11,7 @@ class QuestionDetails extends Component {
         const votes = (questionOneVotes)+(questionTwoVotes)
         return (
             <div className="container">
-                <div className="form">
+                <div className="question">
                     <p> <img src={users[questions[qid].author].avatarURL} alt={users[questions[qid].author].id} /> </p>
                     <p>Asked By: {questions[qid].author}</p>
                     <h4>Wold you rather ...</h4>
