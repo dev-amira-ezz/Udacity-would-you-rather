@@ -18,8 +18,8 @@ export function handleAddQuestion (optionOne, optionTwo) {
     
     dispatch(showLoading())
     const question = await saveQuestion({
-      optionOne,
-      optionTwo,
+      optionOneText: optionOne,
+			optionTwoText: optionTwo,
       author: authedUser,
     })
     dispatch(addQuestion(question))
