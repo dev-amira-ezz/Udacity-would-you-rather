@@ -30,7 +30,7 @@ import { setAuthedUser } from '../actions/authedUser'
           name='Home'
           active={activeItem === 'Home'}
           onClick={this.handleItemClick}
-          as={NavLink} to='/dashboard' 
+          as={NavLink} exact to='/' 
         
         />
         <Menu.Item

@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
 import LoadingBar from 'react-redux-loading'
-import { BrowserRouter as Router, Route, Redirect, useParams } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom'
 
 import handleInitialData from '../actions/shared'
 import Dashboard from './Dashboard'
@@ -23,12 +23,11 @@ class App extends Component {
           {this.props.loading === true
             ? <LoadingBar />
             : this.props.loggedOut === true
-              ? <Route path='/' exact component={App} /> && <Login />
+              ? <Route path='/' exact component={Dashboard} /> && <Login />
               : <div>
                 <h1 className="header">Would You Rather</h1>
                 <NavBar />
-                <Redirect to='/dashboard' />
-                <Route path='/dashboard' component={Dashboard} />
+                <Route path='/' exact component={Dashboard} />
                 <Route path='/questions/:question_id' component={ViewQuestion} />
                 <Route path='/add' component={NewQuestion} />
                 <Route path='/leaderboard' component={Leaderboard} />
