@@ -181,6 +181,11 @@ li {
   margin: 10px;
 }
 
+.button:disabled {
+  background-color: thistle;
+  color: gray;
+}
+
 .button:hover {
   color: #654321;
   background-color: white;
