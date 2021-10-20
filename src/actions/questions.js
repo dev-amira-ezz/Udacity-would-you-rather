@@ -37,20 +37,20 @@ export function receiveQuestions (questions) {
 function answerQuestion (authedUser, qid, answer) {
   return {
       type: ANSWER_QUESTION,
-      qid,
       authedUser,
+      qid,
       answer
   }
 }
 
-export function handleAnswer (info) {
+export function handleAnswer (authedUser, qid, answer) {
   return (dispatch)=>{
-    dispatch(answerQuestion(info))
+    dispatch(answerQuestion(authedUser, qid, answer))
 
-    return saveQuestionAnswer(info)
+    return saveQuestionAnswer(authedUser, qid, answer)
     .catch((e)=>{
       console.warn('There is an error in handleAnswer: ', e)
-      dispatch(answerQuestion(info))
+      dispatch(answerQuestion(authedUser, qid, answer))
       alert("There was an error answering the question, please try again.")
     })
   }

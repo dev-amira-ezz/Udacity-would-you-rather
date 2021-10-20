@@ -4,18 +4,30 @@ import { formatQuestion, formatDate } from '../utils/helpers'
 import {handleAnswer} from '../actions/questions'
 
 class AnswerQuestion extends Component {
-    handleAnswer = (e) => {
+    state={
+        answer: ''
+    }
+    handleChange = (e) => {
+        this.setState(() => ({
+            answer: e.target.value,
+        }))
+    }
+    
+    
+    handleSubmit = (e) => {
         e.preventDefault()
-        const { dispatch, question, authedUser } = this.props
-
-        dispatch(handleAnswer({
+        const { dispatch, qid, authedUser } = this.props
+        const { answer } = this.state
+        console.log('answer', answer)
+        dispatch(handleAnswer(
             authedUser,
-             qid: question.id,
-              answer: question.answer
-            }))
+             qid,
+              answer,
+            ))
     }
     render() {
-        const { question } = this.props
+        const { question, authedUser } = this.props
+         const { answer } = this.state
 
         if (question === null) {
             return <h1 className="not-found">This question does not exist</h1>
@@ -35,12 +47,20 @@ class AnswerQuestion extends Component {
                         <div>
                             <span>{name} asks:</span>
                             <h3>Would you rather ...</h3>
-                            <form>
-                                <input type="radio" name="optionOne" />{` ${optionOne.text}`}
+                            <form onSubmit={this.handleSubmit}>
+                                <input 
+                                type="radio" 
+                                name="answer" 
+                                value="optionOne"
+                                onChange={this.handleChange} />{` ${optionOne.text}`}
                                 <p>Or ... </p>
-                                <input type="radio" name="optionTwo" />{` ${optionTwo.text}`}
+                                <input 
+                                type="radio" 
+                                name="answer" 
+                                value="optionTwo"
+                                onChange={this.handlechange} />{` ${optionTwo.text}`}
                                 <br />
-                                <button className="button" disabled>Answer Question</button>
+                                <button className="button">Answer Question</button>
                             </form>
                         </div>
                     </div>
@@ -55,6 +75,7 @@ function mapStateToProps({ authedUser, users, questions }) {
     const question = questions[qid]
     return {
         authedUser,
+        qid,
         question: question
             ? formatQuestion(question, users[question.author], authedUser)
             : null
