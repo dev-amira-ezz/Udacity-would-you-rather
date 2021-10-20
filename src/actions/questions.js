@@ -37,7 +37,7 @@ export function receiveQuestions (questions) {
     }
 }
 
-export function answerQuestion (authedUser, qid, answer) {
+export function answerQuestion ({authedUser, qid, answer}) {
   return {
       type: ANSWER_QUESTION,
       authedUser,
