@@ -16,8 +16,8 @@ export async function getInitialData() {
   })
 }
 
-export function saveQuestionAnswer(info) {
-  return _saveQuestionAnswer(info)
+export function saveQuestionAnswer(authedUser, qid, answer) {
+  return _saveQuestionAnswer({authedUser, qid, answer})
 }
 
 export function saveQuestion(info) {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { formatQuestion, formatDate } from '../utils/helpers'
-import {handleAnswer} from '../actions/questions'
+import {handleAnswer} from '../actions/users'
 
 class AnswerQuestion extends Component {
     state={
@@ -18,12 +18,11 @@ class AnswerQuestion extends Component {
         e.preventDefault()
         const { dispatch, qid, authedUser } = this.props
         const { answer } = this.state
-        console.log('answer', answer)
-        dispatch(handleAnswer(
+        dispatch(handleAnswer({
             authedUser,
              qid,
               answer,
-            ))
+        }))
     }
     render() {
         const { question, authedUser } = this.props
