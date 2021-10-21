@@ -11,7 +11,7 @@ class Leaderboard extends Component {
 
     render() {
         const { users } = this.props
-        const sortedUsers = users.sort((a, b) => b.totalScore - a.totalScore)
+        const sortedUsers = users.sort((a, b) => b.score - a.score)
 
         return (
 
@@ -39,7 +39,7 @@ function mapStateToProps({ users }) {
     userArray.map(user => {
         const answeredQuestions = Object.keys(user.answers).length
         const addedQuestions = user.questions.length
-        const score = answeredQuestions + addedQuestions   
+        user.score = answeredQuestions + addedQuestions   
     })
     return {
         users: userArray,

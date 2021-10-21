@@ -10,6 +10,7 @@ import ViewQuestion from './ViewQuestion'
 import NewQuestion from './NewQuestion'
 import NavBar from './NavBar'
 import Leaderboard from './Leaderboard';
+import NotFound from './NotFound'
 
 
 class App extends Component {
@@ -31,6 +32,7 @@ class App extends Component {
                 <Route path='/questions/:question_id' component={ViewQuestion} />
                 <Route path='/add' component={NewQuestion} />
                 <Route path='/leaderboard' component={Leaderboard} />
+                <Route path='/notfound' component={NotFound} />
               </div>
   }
           
