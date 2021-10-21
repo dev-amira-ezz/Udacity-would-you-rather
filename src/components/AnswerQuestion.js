@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { formatQuestion, formatDate } from '../utils/helpers'
-import {handleAnswer} from '../actions/users'
+import { handleAnswer } from '../actions/users'
+import { Redirect } from 'react-router-dom'
 
 class AnswerQuestion extends Component {
-    state={
+    state = {
         answer: ''
     }
     handleChange = (e) => {
@@ -12,24 +13,23 @@ class AnswerQuestion extends Component {
             answer: e.target.value,
         }))
     }
-    
-    
+
+
     handleSubmit = (e) => {
         e.preventDefault()
         const { dispatch, qid, authedUser } = this.props
         const { answer } = this.state
         dispatch(handleAnswer({
             authedUser,
-             qid,
-              answer,
+            qid,
+            answer,
         }))
     }
     render() {
-        const { question, authedUser } = this.props
-         const { answer } = this.state
+        const { question } = this.props
 
         if (question === null) {
-            return <h1 className="not-found">This question does not exist</h1>
+            return <Redirect to='/NotFound' />
         }
 
         const { name, avatar, optionOne, optionTwo, timestamp } = question
@@ -41,23 +41,23 @@ class AnswerQuestion extends Component {
                         src={avatar}
                         alt={`Avatar of ${name}`}
                     />
-                                    <p>{formatDate(timestamp)}</p>
+                    <p>{formatDate(timestamp)}</p>
                     <div className='question-info'>
                         <div>
                             <span>{name} asks:</span>
                             <h3>Would you rather ...</h3>
                             <form onSubmit={this.handleSubmit}>
-                                <input 
-                                type="radio" 
-                                name="answer" 
-                                value="optionOne"
-                                onChange={this.handleChange} />{` ${optionOne.text}`}
+                                <input
+                                    type="radio"
+                                    name="answer"
+                                    value="optionOne"
+                                    onChange={this.handleChange} />{` ${optionOne.text}`}
                                 <p>Or ... </p>
-                                <input 
-                                type="radio" 
-                                name="answer" 
-                                value="optionTwo"
-                                onChange={this.handlechange} />{` ${optionTwo.text}`}
+                                <input
+                                    type="radio"
+                                    name="answer"
+                                    value="optionTwo"
+                                    onChange={this.handlechange} />{` ${optionTwo.text}`}
                                 <br />
                                 <button className="button">Answer Question</button>
                             </form>

@@ -7,14 +7,15 @@ import { Redirect } from 'react-router'
 
 class ViewQuestion extends Component {
     render() {
-        const { authedUser, answered } = this.props
+        const { authedUser, answered, notFound } = this.props
 
         return (
             notFound
-                ? <Redirect to="/NotFound" />
+                ? <Redirect to='/NotFound' />
                 : answered
                     ? <QuestionDetails />
-                    : <AnswerQuestion />)
+                    : <AnswerQuestion />
+                    )
 
     }
 }

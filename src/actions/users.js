@@ -36,7 +36,7 @@ export function handleAnswer({authedUser, qid, answer}) {
     dispatch(answerQuestion({authedUser, qid, answer}));
 
     try {
-      return saveQuestionAnswer(authedUser, qid, answer);
+      return saveQuestionAnswer({authedUser, qid, answer});
     } catch (e) {
       console.warn('Error in handleAnswer:', e);
     }
