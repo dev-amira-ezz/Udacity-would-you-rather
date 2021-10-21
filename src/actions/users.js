@@ -30,10 +30,10 @@ function userAddAnswer({authedUser, qid, answer}) {
   };
 }
 
-export function handleAnswer(authedUser, qid, answer) {
+export function handleAnswer({authedUser, qid, answer}) {
   return async dispatch => {
-    dispatch(userAddAnswer(authedUser, qid, answer));
-    dispatch(answerQuestion(authedUser, qid, answer));
+    dispatch(userAddAnswer({authedUser, qid, answer}));
+    dispatch(answerQuestion({authedUser, qid, answer}));
 
     try {
       return saveQuestionAnswer(authedUser, qid, answer);
