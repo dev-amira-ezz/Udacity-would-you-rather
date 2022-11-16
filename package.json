@@ -2,7 +2,7 @@
   "name": "would-you-rather",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://aezz4007.github.io/Udacity-woould-you-rather",
+  "homepage": "http://aezz4007.github.io/Udacity-would-you-rather",
   "dependencies": {
     "gh-pages": "^4.0.0",
     "react": "^17.0.2",
